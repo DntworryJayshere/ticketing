@@ -1,0 +1,20 @@
+apiVersion: skaffold/v2beta14
+kind: Config
+metadata:
+  name: blog
+deploy:
+  kubectl:
+    manifests:
+      - infra/k8s/*
+build:
+  local:
+    push: false
+  artifacts:
+    - image: dntworryjayshere/ticketing-auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
