@@ -30,7 +30,7 @@ router.put(
 		if (ticket.userId !== req.currentUser!.id) {
 			throw new NotAuthorizedError();
 		}
-
+		//updates in mem not in mongo the below .save is what saves to mongo
 		ticket.set({
 			title: req.body.title,
 			price: req.body.price,
