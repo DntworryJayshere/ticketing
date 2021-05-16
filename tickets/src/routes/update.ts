@@ -5,6 +5,7 @@ import {
 	NotFoundError,
 	requireAuth,
 	NotAuthorizedError,
+	BadRequestError,
 } from '@ticketing_jr/common';
 import { Ticket } from '../models/ticket';
 import { TicketUpdatedPublisher } from '../events/publishers/ticket-updated-publisher';
@@ -43,6 +44,7 @@ router.put(
 			title: ticket.title,
 			price: ticket.price,
 			userId: ticket.userId,
+			version: ticket.version,
 		});
 
 		res.send(ticket);
