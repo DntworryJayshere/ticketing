@@ -1,7 +1,8 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
-
+import dotenv from 'dotenv';
+dotenv.config();
 declare global {
 	namespace NodeJS {
 		interface Global {
@@ -11,6 +12,8 @@ declare global {
 }
 
 jest.mock('../nats-wrapper');
+
+process.env.STRIPE_KEY = process.env.STRIPE_KEY;
 
 let mongo: any;
 beforeAll(async () => {
