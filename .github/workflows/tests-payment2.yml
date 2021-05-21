@@ -1,18 +1,19 @@
 name: tests-payments2
 
-on: 
+on:
   pull_request:
-    branches: [ main, dev ]
+    branches: [main, dev]
 
   workflow_dispatch:
-  
+
 jobs:
-  build:
+  dev:
     runs-on: ubuntu-latest
+    environment: dev
 
     steps:
       - uses: actions/checkout@v2
       - name: Perform Test
         env:
           STRIPE_KEY: ${{ secrets.STRIPE_KEY }}
-      - run: cd payments && npm install && npm run test:ci
+        run: cd payments && npm install && npm run test:ci
