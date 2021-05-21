@@ -1,0 +1,15 @@
+name: test-payments
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Perform Test
+        run: | #run milptiple commands
+          cd payment && npm install &&
+          npm config set STRIPE_KEY=${STRIPE_KEY} && npm run test:ci
+        env:
+          STRIPE_KEY: ${{ secrets.STRIPE_KEY }}
