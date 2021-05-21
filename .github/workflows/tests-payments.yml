@@ -14,7 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Perform Test
-        run: cd orders && npm config set STRIPE_KEY=${STRIPE_KEY}
-        npm install && npm run test:ci
+        run: | #run milptiple commands
+          cd orders && npm install &&
+          npm config set STRIPE_KEY=${STRIPE_KEY} && npm run test:ci
         env:
           STRIPE_KEY: ${{ secrets.STRIPE_KEY }}
