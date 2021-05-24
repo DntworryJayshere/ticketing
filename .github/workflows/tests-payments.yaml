@@ -1,12 +1,13 @@
 name: tests-payments
 
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - 'payments/**'
 
 jobs:
-  dev:
+  build:
     runs-on: ubuntu-latest
-    environment: dev
-
     steps:
       - uses: actions/checkout@v2
       - name: Perform Test
