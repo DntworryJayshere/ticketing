@@ -5,8 +5,7 @@ const BuildClient = ({ req }) => {
 		// We are on the server
 
 		return axios.create({
-			baseURL:
-				'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
+			baseURL: 'http://www.k8sapp.cloud',
 			headers: req.headers,
 		});
 	} else {
