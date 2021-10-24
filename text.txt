@@ -1,2 +1,4 @@
 thisisunsafe
-docker build -t dntworryjayshere/ticketing-auth:pi-latest
+docker build -t dntworryjayshere/ticketing-auth:pi-latest .
+docker push dntworryjayshere/ticketing-auth:pi-latest
+

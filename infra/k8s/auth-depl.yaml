@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: dntworryjayshere/ticketing-auth-pi
+          image: dntworryjayshere/ticketing-auth:pi-latest
 ---
 apiVersion: v1
 kind: Service
