@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: dntworryjayshere/ticketing-client
+          image: dntworryjayshere/ticketing-client:pi-latest
 ---
 apiVersion: v1
 kind: Service
