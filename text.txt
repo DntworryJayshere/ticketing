@@ -1,0 +1,2 @@
+thisisunsafe
+docker build -t dntworryjayshere/ticketing-auth:pi-latest
